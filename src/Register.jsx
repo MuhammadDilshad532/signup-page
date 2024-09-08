@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineLock } from 'react-icons/ai'
-import { LiaUserSolid } from 'react-icons/lia'
+import { AiOutlineMail } from "react-icons/ai";
 import { Link } from 'react-router-dom'
 
 const Register = () => {
@@ -24,7 +24,7 @@ const Register = () => {
             >
               Your Email
             </label>
-            <LiaUserSolid  className="absolute top-4 right-4"/>
+            <AiOutlineMail className="absolute top-4 right-4"/>
            
           </div>
           <div className=" relative my-4">
@@ -76,7 +76,7 @@ const Register = () => {
           <div>
             <span className="mt-4">
             Already createe an account?
-              <Link to="/Login" className="text-blue-600">
+              <Link to="/Login" className="text-red-700 font-bold ml-2">
                 Login
               </Link>
             </span>

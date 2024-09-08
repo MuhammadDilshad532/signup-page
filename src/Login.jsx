@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LiaUserSolid } from "react-icons/lia";
+import { AiOutlineMail } from "react-icons/ai";
 import { AiOutlineLock } from "react-icons/ai";
 const Login = () => {
   return (
@@ -23,7 +23,7 @@ const Login = () => {
             >
               Your Email
             </label>
-            <LiaUserSolid  className="absolute top-4 right-4"/>
+            <AiOutlineMail className="absolute top-4 right-4"/>
            
           </div>
           <div className=" relative my-4">
@@ -62,7 +62,7 @@ const Login = () => {
           <div>
             <span className="mt-4">
               New here?{" "}
-              <Link to="/Register" className="text-blue-600">
+              <Link to="/Register" className=" text-red-700 font-bold ml-2">
                 Create an Account
               </Link>
             </span>
