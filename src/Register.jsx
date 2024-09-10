@@ -101,7 +101,7 @@ const Register = () => {
             Your Email
           </label>
           <AiOutlineMail className="absolute top-4 right-4" />
-          {errors.email && <span className="text-red-500">{errors.email}</span>}
+          {errors.email && <span className="text-red-700">{errors.email}</span>}
         </div>
         <div className="relative my-4">
           <input
@@ -129,7 +129,7 @@ const Register = () => {
           </label>
           <AiOutlineLock className="absolute top-4 right-4" />
           {errors.password && (
-            <span className="text-red-500">{errors.password}</span>
+            <span className="text-red-700">{errors.password}</span>
           )}
         </div>
         <div className="flex justify-between items-center">
