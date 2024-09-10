@@ -1,45 +1,45 @@
-import React, { useState } from 'react';
-import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { AiOutlineLock, AiOutlineMail } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const navigate = useNavigate();
 
-  
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
- 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const validateForm = () => {
     let isValid = true;
     const newErrors = {};
 
-   
-    if (!formData.firstName || !formData.lastName || !formData.password || !formData.confirmPassword) {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
       isValid = false;
     }
 
-    
     if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email (e.g. abc@gmail.com)';
+      newErrors.email = "Please enter a valid email (e.g. abc@gmail.com)";
       isValid = false;
     }
 
-    
     if (formData.password !== formData.confirmPassword) {
-      newErrors.password = 'Passwords do not match';
+      newErrors.password = "Passwords do not match";
       isValid = false;
     }
 
@@ -51,7 +51,7 @@ const Register = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      navigate('/Login');
+      navigate("/Login");
     }
   };
 
@@ -61,7 +61,9 @@ const Register = () => {
 
   return (
     <div className="bg-slate-800 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative">
-      <h1 className="text-4xl text-white font-bold text-center mb-6">Register</h1>
+      <h1 className="text-4xl text-white font-bold text-center mb-6">
+        Register
+      </h1>
       <form onSubmit={handleSubmit}>
         <div className="relative my-4">
           <input
@@ -69,7 +71,7 @@ const Register = () => {
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 peer"
+            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 "
           />
           <label className="absolute text-sm text-white duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:translate-y-6">
             Your First Name
@@ -93,7 +95,7 @@ const Register = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 peer"
+            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 "
           />
           <label className="absolute text-sm text-white duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:translate-y-6">
             Your Email
@@ -107,7 +109,7 @@ const Register = () => {
             name="password"
             value={formData.password}
             onChange={handleChange}
-            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 peer"
+            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 "
           />
           <label className="absolute text-sm text-white duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:translate-y-6">
             Your Password
@@ -120,13 +122,15 @@ const Register = () => {
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
-            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 peer"
+            className="block w-72 py-2.5 px-0 text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 "
           />
           <label className="absolute text-sm text-white duration-300 transform -translate-y-6 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:translate-y-6">
             Confirm Your Password
           </label>
           <AiOutlineLock className="absolute top-4 right-4" />
-          {errors.password && <span className="text-red-500">{errors.password}</span>}
+          {errors.password && (
+            <span className="text-red-500">{errors.password}</span>
+          )}
         </div>
         <div className="flex justify-between items-center">
           <div className="flex gap-2 items-center">
